@@ -5,6 +5,8 @@ export interface PropertyButtonProps{
 
 export const PropertyButton = ({className}:PropertyButtonProps) => {
   return (
-    <div>PropertyButton</div>
+    <div>
+      <button>Agregar a Favoritos</button>
+    </div>
   )
 }

@@ -8,9 +8,9 @@ export interface PropertyTitleProps{
 
 export const PropertyTitle = ({className, title}:PropertyTitleProps) => {
 
-  const { property } = useContext(PropCardContext)
+  const { data } = useContext(PropCardContext)
 
   return (
-    <span>{ title ? title : property.nombre }</span>
+    <span>{ title ? title : data.nombre }</span>
   )
 }
