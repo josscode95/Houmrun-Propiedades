@@ -1,7 +1,6 @@
-import React from 'react'
 
 export interface PropertyButtonProps{
-  className:string;
+  className?:string;
 }
 
 export const PropertyButton = ({className}:PropertyButtonProps) => {

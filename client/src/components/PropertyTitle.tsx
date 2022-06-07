@@ -1,11 +1,16 @@
-import React from 'react'
+import { useContext } from 'react';
+import { PropCardContext } from './PropertyCard';
 
 export interface PropertyTitleProps{
-  className:string;
+  title?:string;
+  className?:string;
 }
 
-export const PropertyTitle = ({className}:PropertyTitleProps) => {
+export const PropertyTitle = ({className, title}:PropertyTitleProps) => {
+
+  const { property } = useContext(PropCardContext)
+
   return (
-    <div>PropertyTitle</div>
+    <span>{ title ? title : property.nombre }</span>
   )
 }

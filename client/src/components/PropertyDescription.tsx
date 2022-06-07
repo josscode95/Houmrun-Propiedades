@@ -1,7 +1,6 @@
-import React from 'react'
 
 export interface PropertyDescriptionProps{
-  className:string;
+  className?:string;
 }
 
 export const PropertyDescription = ({className}:PropertyDescriptionProps) => {

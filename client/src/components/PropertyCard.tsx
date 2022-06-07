@@ -1,5 +1,8 @@
-import { ReactElement } from 'react'
-import { Propertie } from '../interfaces/properties';
+import { ReactElement, createContext } from 'react';
+import { PropContextProps, Propertie } from '../interfaces/properties';
+
+export const PropCardContext = createContext({} as PropContextProps)
+const { Provider } = PropCardContext;
 
 interface PropertyCardProps{
   property:Propertie;
@@ -8,8 +11,12 @@ interface PropertyCardProps{
 
 export const PropertyCard = ({property, children}:PropertyCardProps) => {
   return (
-    <div>
-      { children }
-    </div>
+    <Provider value={{
+      property
+    }}>
+      <div>
+        { children }
+      </div>
+    </Provider>
   )
 }

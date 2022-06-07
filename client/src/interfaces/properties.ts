@@ -12,3 +12,7 @@ export interface Propertie {
 export interface ChildrenProps{
   children:JSX.Element|JSX.Element[];
 }
+
+export interface PropContextProps{
+  property:Propertie;
+}
