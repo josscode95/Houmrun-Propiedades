@@ -9,4 +9,5 @@ export const PropertiesContainer = styled.div`
   margin: 30px 50px 30px 30px;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   grid-gap: 1rem;
+  min-height: 75vh;
 `;

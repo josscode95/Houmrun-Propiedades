@@ -1,11 +1,13 @@
 import { useContext, useEffect } from 'react'
 import { PropertiesContext } from '../context/PropertiesContext';
+import { PropertiesContainer } from '../styles/screens/home';
 import { 
   PropertyCard, 
   PropertyDescription, 
   PropertyImage, 
   PropertyTitle 
 } from '../components';
+
 
 export const Favoritos = () => {
 
@@ -15,22 +17,25 @@ export const Favoritos = () => {
   }, [favoritos, useContext])
 
   return (
-    <div>
+    <>
       <h1>Favorites Page</h1>
-      <div>
+      <PropertiesContainer>
         {
-          favoritos.map(favoritos => (
-            <PropertyCard
-              data={favoritos}
-              key={favoritos._id}
-            >
-              <PropertyTitle />
-              <PropertyImage />
-              <PropertyDescription />
-            </PropertyCard>
-          ))
+          favoritos.length > 0 
+          ?
+            favoritos.map(favoritos => (
+              <PropertyCard
+                data={favoritos}
+                key={favoritos._id}
+              >
+                <PropertyTitle />
+                <PropertyImage />
+                <PropertyDescription />
+              </PropertyCard>
+            ))
+          : <h3>No hay Favoritos</h3>
         }
-      </div>
-    </div>
+      </PropertiesContainer>
+    </>
   )
 }
