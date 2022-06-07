@@ -1,11 +1,14 @@
-import React, { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { PropertiesContext } from '../context/PropertiesContext';
 
 export const Home = () => {
 
-  const { properties } = useContext(PropertiesContext);
+  const { properties, favoritos } = useContext(PropertiesContext);
+
+  useEffect(() => {
+  }, [properties, favoritos])
 
   return (
-    <div>{JSON.stringify(properties, null, 5)}</div>
+    <div>{JSON.stringify(favoritos, null, 5)}</div>
   )
 }
