@@ -8,7 +8,7 @@ import { PropertyImageProps } from "../components/PropertyImage";
 import { PropertyTitleProps } from "../components/PropertyTitle";
 
 export interface Propertie {
-  _id?:         string;
+  _id:         string;
   agregadoFav: boolean;
   descripcion: string;
   imagen:      string;

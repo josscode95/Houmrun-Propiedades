@@ -8,6 +8,7 @@ type PropertiesContextProps = {
   favoritos:Propertie[];
   cargarPropiedades:()=>Promise<void>;
   filtrarPropiedades:()=>Promise<void>;
+  agregarFavorito:(id:string)=>void;
 }
 
 const propertiesInitialState:PropertyState = {
@@ -44,11 +45,17 @@ export const PropertiesProvider = ({children}:ChildrenProps) => {
     })
   }
 
+  const agregarFavorito = async(id:string = '') => {
+    const resp = await propertiesDB.put(`/properties/${id}`, {agregadoFav: true})
+    console.log(resp)
+  }
+
   return (
     <PropertiesContext.Provider value={{
       ...state,
       cargarPropiedades,
-      filtrarPropiedades
+      filtrarPropiedades,
+      agregarFavorito
     }}>
       { children }
     </PropertiesContext.Provider>
