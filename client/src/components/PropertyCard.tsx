@@ -1,5 +1,6 @@
 import { ReactElement, createContext } from 'react';
 import { PropContextProps, Propertie } from '../interfaces/properties';
+import { CardContainer } from '../styles/components/property-card';
 
 export const PropCardContext = createContext({} as PropContextProps)
 const { Provider } = PropCardContext;
@@ -14,9 +15,9 @@ export const PropertyCard = ({data, children}:PropertyCardProps) => {
     <Provider value={{
       data
     }}>
-      <div>
+      <CardContainer>
         { children }
-      </div>
+      </CardContainer>
     </Provider>
   )
 }

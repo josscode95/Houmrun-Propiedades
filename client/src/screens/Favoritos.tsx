@@ -8,25 +8,29 @@ import {
 } from '../components';
 
 export const Favoritos = () => {
-  const { favoritos } = useContext(PropertiesContext);
 
+  const { favoritos } = useContext(PropertiesContext);
+  
   useEffect(() => {
-  }, [favoritos])
+  }, [favoritos, useContext])
 
   return (
     <div>
-      {
-        favoritos.map(favoritos => (
-          <PropertyCard
-            data={favoritos}
-            key={favoritos._id}
-          >
-            <PropertyTitle />
-            <PropertyImage />
-            <PropertyDescription />
-          </PropertyCard>
-        ))
-      }
+      <h1>Favorites Page</h1>
+      <div>
+        {
+          favoritos.map(favoritos => (
+            <PropertyCard
+              data={favoritos}
+              key={favoritos._id}
+            >
+              <PropertyTitle />
+              <PropertyImage />
+              <PropertyDescription />
+            </PropertyCard>
+          ))
+        }
+      </div>
     </div>
   )
 }
