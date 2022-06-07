@@ -2,3 +2,13 @@ html, body{
   margin: 0;
   padding: 0;
 }
+
+.agregado{
+  cursor: pointer;
+  background-color: blue;
+}
+
+.no-agregado{
+  cursor: pointer;
+  background-color: gray;
+}

@@ -15,6 +15,7 @@ export const PropertyButton = ({className}:PropertyButtonProps) => {
     <div>
       <button
         onClick={() => agregarFavorito(data._id)}
+        className={ data.agregadoFav === true ? 'agregado' : 'no-agregado' }
       >Agregar a Favoritos</button>
     </div>
   )
